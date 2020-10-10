@@ -16,11 +16,32 @@
 }
 
 .name-and-tag {
-  margin-left: 5%;
+  margin-left: 1%;
+  margin-top: 1%;
 }
 
 .post-header img {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
+  margin: 1%;
+}
+
+.post {
+  width: 60%;
+  margin: auto;
+  
+}
+
+.home-link {
+  width: 60%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.likes-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
