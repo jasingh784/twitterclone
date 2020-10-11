@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/post.model');
+const Post = require('../models/posts');
 
-router.get('/', async (req, res) => {               
+router.get('/', async (req, res) => {     
+    console.log('getting posts...')          
     try {
         const foundPosts = await Post.find().exec();
         //const resPosts = await foundPosts.json();
@@ -14,9 +15,12 @@ router.get('/', async (req, res) => {
     
 })
 
-router.post('/add', async (req, res) => {               
+router.post('/', async (req, res) => {
+    const postToAdd = req.body.postbody;
+    //console.log(req)
+    console.log(postToAdd);         
     try {
-        const addedPost = await Post.create(req.body.postbody);
+        const addedPost = await Post.create({postbody: postToAdd});
         console.log('added new post to db ' + addedPost)
     } catch(error) {
         console.log('error adding post to db: ' + error);

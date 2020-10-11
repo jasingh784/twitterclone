@@ -2,13 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors);
+//app.use(cors);
 app.use(express.json());
+
+app.use('/posts', require('./routes/posts'));
 
 mongoose.connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
@@ -18,4 +21,9 @@ mongoose.connect(process.env.ATLAS_URI, {
 .catch( error => console.log("DB connectection error: " + error.message));
 
 
-app.listen(port, ()=> {console.log('The server is running')});
+app.get('/', (req, res) => {
+    res.send('Hello');
+});
+
+
+app.listen(port, ()=> {console.log(`The server is running on port ${port}`)});

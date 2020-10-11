@@ -1,0 +1,12 @@
+
+POST http://localhost:3000/posts/
+content-type: application/json
+
+{
+    "postbody": "This is my third post"
+}
+
+
+###
+
+GET http://localhost:5000/posts/ HTTP/1.1

@@ -2,14 +2,14 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import PostHeader from './PostHeader';
 
-function Post() {
+function Post(props) {
     return (
         <>
             <Card className='post'>
                 <PostHeader />
                 <Card.Body>
                     <Card.Text>
-                    Rule #1: Anime profile pics are not allowed on this site. 
+                    {props.post} 
                     </Card.Text>
                     <Card.Text>
                         {new Date(Date.now()).toDateString()}
