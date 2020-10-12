@@ -16,7 +16,7 @@ function Post(props) {
                     </Card.Text>
                     <hr></hr>
                     <Card.Text className='likes-sec'>
-                        <span>Retweets</span> <span>Likes</span>
+                        <span>Retweets</span> <span>Likes</span> <span>Replies</span>
                     </Card.Text>
                 </Card.Body>
             </Card> 
